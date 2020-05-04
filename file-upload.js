@@ -10,6 +10,9 @@
 
   /*
    * Here's where the magic happens!!!
+   * Graphql file upload using vanilla GraphQL.js API.
+    - https://stackoverflow.com/questions/59043021/how-do-i-upload-files-to-a-graphql-backend-implemented-using-graphql-upload-usin
+    - https://github.com/jaydenseric/graphql-multipart-request-spec
    */
   function uploadFile(e) {
     // Creating the FormData Instance
@@ -23,7 +26,7 @@
 
     /*
      * The value of this field will be a JSON string containing the GraphQL query and variables.
-     You must set all file field in the variables object to null e.g:
+       You must set all file field in the variables object to null e.g:
     */
     const operations = JSON.stringify({ query, variables: { file: null } });
     formData.append("operations", operations);
